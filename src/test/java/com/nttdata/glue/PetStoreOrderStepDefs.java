@@ -23,5 +23,9 @@ public class PetStoreOrderStepDefs {
     }
 
 
+    @Given("existe un pedido con id {string}")
+    public void existeUnPedidoConId(String id) {
+        crearOrderPetStore.ConsultarOrder(id);
+    }
 
 }
