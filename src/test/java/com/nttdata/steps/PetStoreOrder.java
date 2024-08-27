@@ -36,5 +36,18 @@ public class PetStoreOrder {
         restAssuredThat(response -> response.statusCode(statusCode));
     }
 
+     public void ConsultarOrder(String id) {
+        SerenityRest.given()
+                .contentType("application/json")
+                .relaxedHTTPSValidation()
+                .body("{\n" +
+                        "  \"id\": \""+id+"\",\n" +
+                        "}")
+                .log().all()
+                .get(CONSULTA_ORDER)
+                .then()
+                .log().all()
+        ;
+    }
 
 }
